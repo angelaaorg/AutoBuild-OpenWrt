@@ -13,3 +13,11 @@ sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.//g' openwrt/package/lean/default-se
 
 #3. Replace with JerryKuKu’s Argon
 #rm openwrt/package/lean/luci-theme-argon -rf
+
+# Modify default theme
+sed -i 's/luci-theme-bootstrap/luci-theme-material/g' openwrt/feeds/luci/collections/luci/Makefile
+
+# Modify hostname
+sed -i 's/OpenWrt/Lenovo/g' openwrt/package/base-files/files/bin/config_generate
+
+sed -i 's/\/bin\/ash/\/bin\/bash/' openwrt/package/base-files/files/etc/passwd
