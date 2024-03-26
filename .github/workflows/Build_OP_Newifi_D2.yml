@@ -101,5 +101,5 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt_Newifi_D2_${{ env.FILE_DATE }}
+        name: lede_newifi_d2_${{ env.FILE_DATE }}
         path: openwrt/bin
