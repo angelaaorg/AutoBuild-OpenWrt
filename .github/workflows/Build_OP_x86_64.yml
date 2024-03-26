@@ -101,5 +101,5 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: lede_X86_64_${{ env.FILE_DATE }}
+        name: LEDE_X86_64_${{ env.FILE_DATE }}
         path: openwrt/bin
