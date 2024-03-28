@@ -96,6 +96,7 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         #chmod +x ./customizex86.sh && ./customizex86.sh
         #cd openwrt && make defconfig
+        mv -f nginx.config openwrt/feeds/packages/net/nginx-util/files/nginx.config
         cd openwrt
         sed -i 's/\/bin\/ash/\/bin\/bash/' package/base-files/files/etc/passwd
         sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.//g' package/lean/default-settings/files/zzz-default-settings
