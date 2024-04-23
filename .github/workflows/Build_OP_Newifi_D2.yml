@@ -93,7 +93,7 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: lede_newifi_d2_${{ env.FILE_DATE }}
-        path: openwrt/bin
+        path: openwrt/bin/targets
 
     - name: Delete workflow runs
       uses: Mattraks/delete-workflow-runs@main
