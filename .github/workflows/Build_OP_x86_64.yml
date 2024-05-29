@@ -50,6 +50,12 @@ jobs:
         echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git" >> ./feeds.conf.default
         echo "src-git poweroff https://github.com/sirpdboy/luci-app-poweroffdevice.git" >> ./feeds.conf.default
         echo "src-git istore https://github.com/linkease/istore.git" >> ./feeds.conf.default
+        #curl -fsSL  https://raw.githubusercontent.com/sirpdboy/other/master/patch/poweroff/poweroff.htm > ./feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_system/poweroff.htm 
+        #curl -fsSL  https://raw.githubusercontent.com/sirpdboy/other/master/patch/poweroff/system.lua > ./feeds/luci/modules/luci-mod-admin-full/luasrc/controller/admin/system.lua
+
+        
+
+
         
     - name: Update & Install feeds
       working-directory: ./openwrt
