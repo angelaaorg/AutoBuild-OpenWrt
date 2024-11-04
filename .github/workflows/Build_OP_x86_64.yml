@@ -83,14 +83,24 @@ jobs:
         cd openwrt
         sed -i 's/\/bin\/ash/\/bin\/bash/' package/base-files/files/etc/passwd
         sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.//g' package/lean/default-settings/files/zzz-default-settings
+        
         #sed -i 's/192.168.1.1/192.168.5.2/g' package/base-files/files/bin/config_generate
         #sed -i 's/OpenWrt/Xiaomi/g' package/base-files/files/bin/config_generate
+        
         sed -i 's/192.168.1.1/192.168.5.2/g' package/base-files/luci2/bin/config_generate
         sed -i 's/OpenWrt/opwrt/g' package/base-files/luci2/bin/config_generate
-        #sed -i 's/luci-theme-bootstrap/luci-theme-argon-mod/g' feeds/luci/collections/luci/Makefile
-
+        
+        #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+        # luci23.05下修改默认主题：
+        sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+        sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-light/Makefile
+        sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-nginx/Makefile
+        sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-ssl-nginx/Makefile
+        #####
+        
         #curl -fsSL  https://raw.githubusercontent.com/sirpdboy/other/master/patch/poweroff/poweroff.htm > ./feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_system/poweroff.htm
         #curl -fsSL  https://raw.githubusercontent.com/sirpdboy/other/master/patch/poweroff/system.lua > ./feeds/luci/modules/luci-mod-admin-full/luasrc/controller/admin/system.lua
+        
         curl -fsSL  https://raw.githubusercontent.com/sirpdboy/other/master/patch/poweroff/poweroff.htm > ./feeds/luci/modules/luci-mod-admin-mini/luasrc/view/mini/poweroff.htm
         curl -fsSL  https://raw.githubusercontent.com/sirpdboy/other/master/patch/poweroff/system.lua > ./feeds/luci/modules/luci-mod-admin-mini/luasrc/controller/mini/system.lua
 
