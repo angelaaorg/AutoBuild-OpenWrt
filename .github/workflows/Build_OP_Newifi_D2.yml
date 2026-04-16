@@ -48,8 +48,9 @@ jobs:
         #sed -i '2s/^/#&/g' feeds.conf.default
         #sed -i '3s/^#//' feeds.conf.default
         #echo "src-git ssrp https://github.com/fw876/helloworld.git" >> ./feeds.conf.default
-        echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git" >> ./feeds.conf.default
-        echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git" >> ./feeds.conf.default
+
+        echo "src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git;main" >> ./feeds.conf.default
+        echo "src-git passwall https://github.com/Openwrt-Passwall/openwrt-passwall.git;main" >> ./feeds.conf.default
 
     - name: Update & Install feeds
       working-directory: ./openwrt
@@ -79,8 +80,8 @@ jobs:
         #sed -i 's/OpenWrt/Xiaomi/g' package/base-files/files/bin/config_generate
         #sed -i 's/luci-theme-bootstrap/luci-theme-material/g' feeds/luci/collections/luci/Makefile
 
-        sed -i 's/192.168.1.1/192.168.5.1/g' package/base-files/luci2/bin/config_generate
-        sed -i 's/OpenWrt/Xiaomi/g' package/base-files/luci2/bin/config_generate
+        sed -i 's/192.168.1.1/192.168.5.1/g' package/base-files/luci/bin/config_generate
+        sed -i 's/OpenWrt/Xiaomi/g' package/base-files/luci/bin/config_generate
         
         # luci23.05下修改默认主题：
         sed -i 's/luci-theme-bootstrap/luci-theme-material/g' feeds/luci/collections/luci/Makefile
